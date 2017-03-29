@@ -1,10 +1,14 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+## from https://gist.github.com/Starefossen/9353638
+
 # Boostrap Script
 $script = <<SCRIPT
 
-sed -i 's/us.archive/de.archive/g' /etc/apt/sources.list
+## The fastest archive in Korea
+sed -i 's/us.archive/kr.archive/g' /etc/apt/sources.list
+## And the latest octave
 add-apt-repository ppa:octave/stable
 
 # Update & Install
@@ -46,10 +50,11 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
 
-  config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "256", "--cpus", "2"]
-  end
+  ##config.vm.provider :virtualbox do |vb|
+  ##  vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2"]
+  ##end
 
+  ## X11 port forwaarding
   config.ssh.forward_agent = true
   config.ssh.forward_x11 = true
 end
