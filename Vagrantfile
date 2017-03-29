@@ -14,7 +14,7 @@ add-apt-repository ppa:octave/stable
 
 # Update & Install
 apt-get update
-apt-get install -y octave gnuplot xauth
+apt-get install -y octave liboctave-dev gnuplot xauth
 
 echo "cd /vagrant" >> /home/vagrant/.bashrc
 
