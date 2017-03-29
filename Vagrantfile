@@ -7,7 +7,8 @@
 $script = <<SCRIPT
 
 ## The fastest archive in Korea
-sed -i 's/us.archive/kr.archive/g' /etc/apt/sources.list
+## https://coderwall.com/p/habdwg/speed-up-package-download-in-vagrant-boxes
+sed -i 's/archive.ubuntu/kr.archive/g' /etc/apt/sources.list
 ## And the latest octave
 add-apt-repository ppa:octave/stable
 
